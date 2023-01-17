@@ -1,0 +1,53 @@
+magiceden\_solana package
+=========================
+
+Submodules
+----------
+
+magiceden\_solana.collections module
+------------------------------------
+
+.. automodule:: magiceden_solana.collections
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+magiceden\_solana.instructions module
+-------------------------------------
+
+.. automodule:: magiceden_solana.instructions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+magiceden\_solana.launchpad module
+----------------------------------
+
+.. automodule:: magiceden_solana.launchpad
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+magiceden\_solana.tokens module
+-------------------------------
+
+.. automodule:: magiceden_solana.tokens
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+magiceden\_solana.wallets module
+--------------------------------
+
+.. automodule:: magiceden_solana.wallets
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: magiceden_solana
+   :members:
+   :undoc-members:
+   :show-inheritance:

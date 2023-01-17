@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>magiceden_solana package &mdash; MagicEden APIs Python SDK 0.0.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> MagicEden APIs Python SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">magiceden_solana package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magiceden_solana.collections">magiceden_solana.collections module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magiceden_solana.collections.Collections"><code class="docutils literal notranslate"><span class="pre">Collections</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magiceden_solana.instructions">magiceden_solana.instructions module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magiceden_solana.instructions.Instructions"><code class="docutils literal notranslate"><span class="pre">Instructions</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magiceden_solana.launchpad">magiceden_solana.launchpad module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magiceden_solana.launchpad.Launchpad"><code class="docutils literal notranslate"><span class="pre">Launchpad</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magiceden_solana.tokens">magiceden_solana.tokens module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magiceden_solana.tokens.Tokens"><code class="docutils literal notranslate"><span class="pre">Tokens</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magiceden_solana.wallets">magiceden_solana.wallets module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#magiceden_solana.wallets.Wallets"><code class="docutils literal notranslate"><span class="pre">Wallets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-magiceden_solana">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MagicEden APIs Python SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">magiceden_solana package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/magiceden_solana.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="magiceden-solana-package">
+<h1>magiceden_solana package<a class="headerlink" href="#magiceden-solana-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-magiceden_solana.collections">
+<span id="magiceden-solana-collections-module"></span><h2>magiceden_solana.collections module<a class="headerlink" href="#module-magiceden_solana.collections" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magiceden_solana.collections.Collections">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magiceden_solana.collections.</span></span><span class="sig-name descname"><span class="pre">Collections</span></span><a class="reference internal" href="_modules/magiceden_solana/collections.html#Collections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.collections.Collections" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.collections.Collections.get_collection_activities">
+<span class="sig-name descname"><span class="pre">get_collection_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/collections.html#Collections.get_collection_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.collections.Collections.get_collection_activities" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves activities of a collection by symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> (<em>str</em>) – The symbol of the collection to retrieve activities for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the activities of the collection.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.collections.Collections.get_collection_listings">
+<span class="sig-name descname"><span class="pre">get_collection_listings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/collections.html#Collections.get_collection_listings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.collections.Collections.get_collection_listings" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves listings of a collection by symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol</strong> (<em>str</em>) – The symbol of the collection to retrieve listings for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 20.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the listings of the collection.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.collections.Collections.get_collection_stats">
+<span class="sig-name descname"><span class="pre">get_collection_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/collections.html#Collections.get_collection_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.collections.Collections.get_collection_stats" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves stats of a collection by symbol.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>symbol</strong> (<em>str</em>) – The symbol of the collection to retrieve stats for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the stats of the collection.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.collections.Collections.get_collections">
+<span class="sig-name descname"><span class="pre">get_collections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/collections.html#Collections.get_collections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.collections.Collections.get_collections" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves collections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 200.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the collections.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-magiceden_solana.instructions">
+<span id="magiceden-solana-instructions-module"></span><h2>magiceden_solana.instructions module<a class="headerlink" href="#module-magiceden_solana.instructions" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magiceden_solana.instructions.</span></span><span class="sig-name descname"><span class="pre">Instructions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.buy">
+<span class="sig-name descname"><span class="pre">buy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.buy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.buy" title="Permalink to this definition"></a></dt>
+<dd><p>Make a buy instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Price of the token.</p></li>
+<li><p><strong>buyer_referral</strong> (<em>str</em>) – Address of the buyer’s referral.</p></li>
+<li><p><strong>expiry</strong> (<em>int</em>) – Unix timestamp for the instruction expiry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.buy_cancel">
+<span class="sig-name descname"><span class="pre">buy_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.buy_cancel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.buy_cancel" title="Permalink to this definition"></a></dt>
+<dd><p>Make a buy cancel instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Price of the token.</p></li>
+<li><p><strong>buyer_referral</strong> (<em>str</em>) – Address of the buyer’s referral.</p></li>
+<li><p><strong>expiry</strong> (<em>int</em>) – Unix timestamp for the instruction expiry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.buy_change_price">
+<span class="sig-name descname"><span class="pre">buy_change_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.buy_change_price"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.buy_change_price" title="Permalink to this definition"></a></dt>
+<dd><p>Make a buy change price instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Original price of the token.</p></li>
+<li><p><strong>new_price</strong> (<em>str</em>) – New price of the token.</p></li>
+<li><p><strong>buyer_referral</strong> (<em>str</em>) – Address of the buyer’s referral.</p></li>
+<li><p><strong>expiry</strong> (<em>int</em>) – Unix timestamp for the instruction expiry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.buy_now">
+<span class="sig-name descname"><span class="pre">buy_now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_ata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_creator_royalty_percent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.buy_now"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.buy_now" title="Permalink to this definition"></a></dt>
+<dd><p>Make a buy now instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>seller</strong> (<em>str</em>) – Address of the seller.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>token_ata</strong> (<em>str</em>) – Address of the token’s ATA.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Price of the token.</p></li>
+<li><p><strong>buyer_referral</strong> (<em>str</em>) – Address of the buyer’s referral.</p></li>
+<li><p><strong>seller_referral</strong> (<em>str</em>) – Address of the seller’s referral.</p></li>
+<li><p><strong>buyer_expiry</strong> (<em>int</em>) – Unix timestamp for the buyer’s instruction expiry.</p></li>
+<li><p><strong>seller_expiry</strong> (<em>int</em>) – Unix timestamp for the seller’s instruction expiry.</p></li>
+<li><p><strong>buyer_creator_royalty_percent</strong> (<em>int</em>) – Royalty percentage for the creator of the token.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.deposit">
+<span class="sig-name descname"><span class="pre">deposit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.deposit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.deposit" title="Permalink to this definition"></a></dt>
+<dd><p>Make a deposit instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>amount</strong> (<em>int</em>) – Amount to deposit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.sell">
+<span class="sig-name descname"><span class="pre">sell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.sell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.sell" title="Permalink to this definition"></a></dt>
+<dd><p>Make a sell instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seller</strong> (<em>str</em>) – Address of the seller.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>token_account</strong> (<em>str</em>) – Address of the token account.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Price of the token.</p></li>
+<li><p><strong>seller_referral</strong> (<em>str</em>) – Address of the seller’s referral.</p></li>
+<li><p><strong>expiry</strong> (<em>int</em>) – Unix timestamp for the instruction expiry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.sell_cancel">
+<span class="sig-name descname"><span class="pre">sell_cancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.sell_cancel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.sell_cancel" title="Permalink to this definition"></a></dt>
+<dd><p>Make a sell cancel instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seller</strong> (<em>str</em>) – Address of the seller.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>token_account</strong> (<em>str</em>) – Address of the token account.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Price of the token.</p></li>
+<li><p><strong>seller_referral</strong> (<em>str</em>) – Address of the seller’s referral.</p></li>
+<li><p><strong>expiry</strong> (<em>int</em>) – Unix timestamp for the instruction expiry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.sell_change_price">
+<span class="sig-name descname"><span class="pre">sell_change_price</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_account</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.sell_change_price"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.sell_change_price" title="Permalink to this definition"></a></dt>
+<dd><p>Make a sell change price instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seller</strong> (<em>str</em>) – Address of the seller.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>token_account</strong> (<em>str</em>) – Address of the token account.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Original price of the token.</p></li>
+<li><p><strong>new_price</strong> (<em>str</em>) – New price of the token.</p></li>
+<li><p><strong>seller_referral</strong> (<em>str</em>) – Address of the seller’s referral.</p></li>
+<li><p><strong>expiry</strong> (<em>int</em>) – Unix timestamp for the instruction expiry.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.sell_now">
+<span class="sig-name descname"><span class="pre">sell_now</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_mint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_ata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_referral</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buyer_expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seller_expiry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.sell_now"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.sell_now" title="Permalink to this definition"></a></dt>
+<dd><p>Make a sell now instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>seller</strong> (<em>str</em>) – Address of the seller.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>token_mint</strong> (<em>str</em>) – Address of the token mint.</p></li>
+<li><p><strong>token_ata</strong> (<em>str</em>) – Address of the token ata.</p></li>
+<li><p><strong>price</strong> (<em>str</em>) – Price of the token.</p></li>
+<li><p><strong>new_price</strong> (<em>str</em>) – New price of the token.</p></li>
+<li><p><strong>buyer_referral</strong> (<em>str</em>) – Address of the buyer’s referral.</p></li>
+<li><p><strong>seller_referral</strong> (<em>str</em>) – Address of the seller’s referral.</p></li>
+<li><p><strong>buyer_expiry</strong> (<em>int</em>) – Unix timestamp for the buyer instruction expiry.</p></li>
+<li><p><strong>seller_expiry</strong> (<em>int</em>) – Unix timestamp for the seller instruction expiry.</p></li>
+<li><p><strong>buyer_creator_royalty_percent</strong> (<em>int</em>) – Percentage of the sale that goes to the creator of the token.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.instructions.Instructions.withdraw">
+<span class="sig-name descname"><span class="pre">withdraw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buyer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amount</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/instructions.html#Instructions.withdraw"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.instructions.Instructions.withdraw" title="Permalink to this definition"></a></dt>
+<dd><p>Make a withdraw instruction request to the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buyer</strong> (<em>str</em>) – Address of the buyer.</p></li>
+<li><p><strong>auction_house_address</strong> (<em>str</em>) – Address of the auction house.</p></li>
+<li><p><strong>amount</strong> (<em>int</em>) – Amount to withdraw.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>API response containing the result of the instruction.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-magiceden_solana.launchpad">
+<span id="magiceden-solana-launchpad-module"></span><h2>magiceden_solana.launchpad module<a class="headerlink" href="#module-magiceden_solana.launchpad" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magiceden_solana.launchpad.Launchpad">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magiceden_solana.launchpad.</span></span><span class="sig-name descname"><span class="pre">Launchpad</span></span><a class="reference internal" href="_modules/magiceden_solana/launchpad.html#Launchpad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.launchpad.Launchpad" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.launchpad.Launchpad.get_launchpad_collections">
+<span class="sig-name descname"><span class="pre">get_launchpad_collections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/launchpad.html#Launchpad.get_launchpad_collections"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.launchpad.Launchpad.get_launchpad_collections" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves launchpad collections.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 200.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the launchpad collections.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-magiceden_solana.tokens">
+<span id="magiceden-solana-tokens-module"></span><h2>magiceden_solana.tokens module<a class="headerlink" href="#module-magiceden_solana.tokens" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magiceden_solana.tokens.Tokens">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magiceden_solana.tokens.</span></span><span class="sig-name descname"><span class="pre">Tokens</span></span><a class="reference internal" href="_modules/magiceden_solana/tokens.html#Tokens"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.tokens.Tokens" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.tokens.Tokens.get_received_offers">
+<span class="sig-name descname"><span class="pre">get_received_offers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mint_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/tokens.html#Tokens.get_received_offers"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.tokens.Tokens.get_received_offers" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves received offers for a token/NFT by mint address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mint_address</strong> (<em>str</em>) – The mint address of the token/NFT to retrieve received offers for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the received offers for the token/NFT.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.tokens.Tokens.get_token_activities">
+<span class="sig-name descname"><span class="pre">get_token_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mint_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/tokens.html#Tokens.get_token_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.tokens.Tokens.get_token_activities" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves activities for a token/NFT by mint address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mint_address</strong> (<em>str</em>) – The mint address of the token/NFT to retrieve activities for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the activities for the token/NFT.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.tokens.Tokens.get_token_listings">
+<span class="sig-name descname"><span class="pre">get_token_listings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mint_address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/tokens.html#Tokens.get_token_listings"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.tokens.Tokens.get_token_listings" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves listings for a token/NFT by mint address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mint_address</strong> (<em>str</em>) – The mint address of the token/NFT to retrieve listings for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the listings for the token/NFT.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.tokens.Tokens.get_token_metadata">
+<span class="sig-name descname"><span class="pre">get_token_metadata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mint_address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/tokens.html#Tokens.get_token_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.tokens.Tokens.get_token_metadata" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves metadata for a token/NFT by mint address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>mint_address</strong> (<em>str</em>) – The mint address of the token/NFT to retrieve metadata for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the metadata for the token/NFT.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-magiceden_solana.wallets">
+<span id="magiceden-solana-wallets-module"></span><h2>magiceden_solana.wallets module<a class="headerlink" href="#module-magiceden_solana.wallets" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">magiceden_solana.wallets.</span></span><span class="sig-name descname"><span class="pre">Wallets</span></span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets.get_escrow_balance_for_wallet">
+<span class="sig-name descname"><span class="pre">get_escrow_balance_for_wallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets.get_escrow_balance_for_wallet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets.get_escrow_balance_for_wallet" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves escrow balance for a wallet by wallet address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wallet_address</strong> (<em>str</em>) – The address of the wallet to retrieve escrow balance for.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the escrow balance for the wallet.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets.get_offers_made_by_wallet">
+<span class="sig-name descname"><span class="pre">get_offers_made_by_wallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets.get_offers_made_by_wallet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets.get_offers_made_by_wallet" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves offers made by a wallet by wallet address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_address</strong> (<em>str</em>) – The address of the wallet to retrieve offers for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the offers made by the wallet.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets.get_offers_received_by_wallet">
+<span class="sig-name descname"><span class="pre">get_offers_received_by_wallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets.get_offers_received_by_wallet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets.get_offers_received_by_wallet" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves offers received by a wallet by wallet address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_address</strong> (<em>str</em>) – The address of the wallet to retrieve offers for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the offers received by the wallet.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets.get_tokens_owned_by_wallet">
+<span class="sig-name descname"><span class="pre">get_tokens_owned_by_wallet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listStatus</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'both'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets.get_tokens_owned_by_wallet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets.get_tokens_owned_by_wallet" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves tokens owned by a wallet by wallet address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_address</strong> (<em>str</em>) – The address of the wallet to retrieve tokens for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+<li><p><strong>listStatus</strong> (<em>str</em><em>, </em><em>optional</em>) – The status of the token, defaults to ‘both’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the tokens owned by the wallet.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets.get_wallet_activities">
+<span class="sig-name descname"><span class="pre">get_wallet_activities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets.get_wallet_activities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets.get_wallet_activities" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves activities of a wallet by wallet address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_address</strong> (<em>str</em>) – The address of the wallet to retrieve activities for.</p></li>
+<li><p><strong>offset</strong> (<em>int</em><em>, </em><em>optional</em>) – The offset for pagination, defaults to 0.</p></li>
+<li><p><strong>limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The limit for pagination, defaults to 100.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the activities of the wallet.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="magiceden_solana.wallets.Wallets.get_wallet_by_address">
+<span class="sig-name descname"><span class="pre">get_wallet_by_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/magiceden_solana/wallets.html#Wallets.get_wallet_by_address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#magiceden_solana.wallets.Wallets.get_wallet_by_address" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieves a wallet by address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>wallet_address</strong> (<em>str</em>) – The address of the wallet to retrieve.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A dictionary containing the wallet information.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the request is not successful, it raises an error with the status code.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-magiceden_solana">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-magiceden_solana" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, vmpyre.sol#0001 (Discord).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

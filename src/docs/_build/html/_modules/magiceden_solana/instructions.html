@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>magiceden_solana.instructions &mdash; MagicEden APIs Python SDK 0.0.2 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> MagicEden APIs Python SDK
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MagicEden APIs Python SDK</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">magiceden_solana.instructions</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for magiceden_solana.instructions</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">helpers.utility</span> <span class="kn">import</span> <span class="n">_make_request</span>
+<span class="kn">from</span> <span class="nn">config.endpoints</span> <span class="kn">import</span> <span class="n">MAINNET_BASE_URL</span>
+
+<div class="viewcode-block" id="Instructions"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions">[docs]</a><span class="k">class</span> <span class="nc">Instructions</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="n">MAINNET_BASE_URL</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">api_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+
+<div class="viewcode-block" id="Instructions.buy"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.buy">[docs]</a>    <span class="k">def</span> <span class="nf">buy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">buyer_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a buy instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param price: Price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param buyer_referral: Address of the buyer&#39;s referral.</span>
+<span class="sd">        :type buyer_referral: str</span>
+<span class="sd">        :param expiry: Unix timestamp for the instruction expiry.</span>
+<span class="sd">        :type expiry: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/buy&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;buyerReferral&quot;</span><span class="p">:</span> <span class="n">buyer_referral</span><span class="p">,</span>
+            <span class="s2">&quot;expiry&quot;</span><span class="p">:</span> <span class="n">expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.buy_now"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.buy_now">[docs]</a>    <span class="k">def</span> <span class="nf">buy_now</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">seller</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">token_ata</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">buyer_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seller_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buyer_expiry</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">seller_expiry</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">buyer_creator_royalty_percent</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a buy now instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param seller: Address of the seller.</span>
+<span class="sd">        :type seller: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param token_ata: Address of the token&#39;s ATA.</span>
+<span class="sd">        :type token_ata: str</span>
+<span class="sd">        :param price: Price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param buyer_referral: Address of the buyer&#39;s referral.</span>
+<span class="sd">        :type buyer_referral: str</span>
+<span class="sd">        :param seller_referral: Address of the seller&#39;s referral.</span>
+<span class="sd">        :type seller_referral: str</span>
+<span class="sd">        :param buyer_expiry: Unix timestamp for the buyer&#39;s instruction expiry.</span>
+<span class="sd">        :type buyer_expiry: int</span>
+<span class="sd">        :param seller_expiry: Unix timestamp for the seller&#39;s instruction expiry.</span>
+<span class="sd">        :type seller_expiry: int</span>
+<span class="sd">        :param buyer_creator_royalty_percent: Royalty percentage for the creator of the token.</span>
+<span class="sd">        :type buyer_creator_royalty_percent: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span> 
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/buy_now&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;tokenATA&quot;</span><span class="p">:</span> <span class="n">token_ata</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;buyerReferral&quot;</span><span class="p">:</span> <span class="n">buyer_referral</span><span class="p">,</span>
+            <span class="s2">&quot;sellerReferral&quot;</span><span class="p">:</span> <span class="n">seller_referral</span><span class="p">,</span>
+            <span class="s2">&quot;buyerExpiry&quot;</span><span class="p">:</span> <span class="n">buyer_expiry</span><span class="p">,</span>
+            <span class="s2">&quot;sellerExpiry&quot;</span><span class="p">:</span> <span class="n">seller_expiry</span><span class="p">,</span>
+            <span class="s2">&quot;buyerCreatorRoyaltyPercent&quot;</span><span class="p">:</span> <span class="n">buyer_creator_royalty_percent</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.buy_cancel"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.buy_cancel">[docs]</a>    <span class="k">def</span> <span class="nf">buy_cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">buyer_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a buy cancel instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param price: Price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param buyer_referral: Address of the buyer&#39;s referral.</span>
+<span class="sd">        :type buyer_referral: str</span>
+<span class="sd">        :param expiry: Unix timestamp for the instruction expiry.</span>
+<span class="sd">        :type expiry: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/buy_cancel&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;buyerReferral&quot;</span><span class="p">:</span> <span class="n">buyer_referral</span><span class="p">,</span>
+            <span class="s2">&quot;expiry&quot;</span><span class="p">:</span> <span class="n">expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.buy_change_price"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.buy_change_price">[docs]</a>    <span class="k">def</span> <span class="nf">buy_change_price</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">new_price</span><span class="p">,</span> <span class="n">buyer_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a buy change price instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param price: Original price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param new_price: New price of the token.</span>
+<span class="sd">        :type new_price: str</span>
+<span class="sd">        :param buyer_referral: Address of the buyer&#39;s referral.</span>
+<span class="sd">        :type buyer_referral: str</span>
+<span class="sd">        :param expiry: Unix timestamp for the instruction expiry.</span>
+<span class="sd">        :type expiry: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/buy_change_price&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;newPrice&quot;</span><span class="p">:</span> <span class="n">new_price</span><span class="p">,</span>
+            <span class="s2">&quot;buyerReferral&quot;</span><span class="p">:</span> <span class="n">buyer_referral</span><span class="p">,</span>
+            <span class="s2">&quot;expiry&quot;</span><span class="p">:</span> <span class="n">expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.sell"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.sell">[docs]</a>    <span class="k">def</span> <span class="nf">sell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seller</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">token_account</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">seller_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a sell instruction request to the API.</span>
+
+<span class="sd">        :param seller: Address of the seller.</span>
+<span class="sd">        :type seller: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param token_account: Address of the token account.</span>
+<span class="sd">        :type token_account: str</span>
+<span class="sd">        :param price: Price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param seller_referral: Address of the seller&#39;s referral.</span>
+<span class="sd">        :type seller_referral: str</span>
+<span class="sd">        :param expiry: Unix timestamp for the instruction expiry.</span>
+<span class="sd">        :type expiry: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/sell&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;tokenAccount&quot;</span><span class="p">:</span> <span class="n">token_account</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;sellerReferral&quot;</span><span class="p">:</span> <span class="n">seller_referral</span><span class="p">,</span>
+            <span class="s2">&quot;expiry&quot;</span><span class="p">:</span> <span class="n">expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.sell_now"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.sell_now">[docs]</a>    <span class="k">def</span> <span class="nf">sell_now</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">seller</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">token_ata</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">new_price</span><span class="p">,</span> <span class="n">buyer_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seller_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">buyer_expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seller_expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a sell now instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param seller: Address of the seller.</span>
+<span class="sd">        :type seller: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param token_ata: Address of the token ata.</span>
+<span class="sd">        :type token_ata: str</span>
+<span class="sd">        :param price: Price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param new_price: New price of the token.</span>
+<span class="sd">        :type new_price: str</span>
+<span class="sd">        :param buyer_referral: Address of the buyer&#39;s referral.</span>
+<span class="sd">        :type buyer_referral: str</span>
+<span class="sd">        :param seller_referral: Address of the seller&#39;s referral.</span>
+<span class="sd">        :type seller_referral: str</span>
+<span class="sd">        :param buyer_expiry: Unix timestamp for the buyer instruction expiry.</span>
+<span class="sd">        :type buyer_expiry: int</span>
+<span class="sd">        :param seller_expiry: Unix timestamp for the seller instruction expiry.</span>
+<span class="sd">        :type seller_expiry: int</span>
+<span class="sd">        :param buyer_creator_royalty_percent: Percentage of the sale that goes to the creator of the token.</span>
+<span class="sd">        :type buyer_creator_royalty_percent: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/sell_now&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;tokenATA&quot;</span><span class="p">:</span> <span class="n">token_ata</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;newPrice&quot;</span><span class="p">:</span> <span class="n">new_price</span><span class="p">,</span>
+            <span class="s2">&quot;buyerReferral&quot;</span><span class="p">:</span> <span class="n">buyer_referral</span><span class="p">,</span>
+            <span class="s2">&quot;sellerReferral&quot;</span><span class="p">:</span> <span class="n">seller_referral</span><span class="p">,</span>
+            <span class="s2">&quot;buyerExpiry&quot;</span><span class="p">:</span> <span class="n">buyer_expiry</span><span class="p">,</span>
+            <span class="s2">&quot;sellerExpiry&quot;</span><span class="p">:</span> <span class="n">seller_expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.sell_cancel"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.sell_cancel">[docs]</a>    <span class="k">def</span> <span class="nf">sell_cancel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seller</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">token_account</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">seller_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a sell cancel instruction request to the API.</span>
+
+<span class="sd">        :param seller: Address of the seller.</span>
+<span class="sd">        :type seller: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param token_account: Address of the token account.</span>
+<span class="sd">        :type token_account: str</span>
+<span class="sd">        :param price: Price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param seller_referral: Address of the seller&#39;s referral.</span>
+<span class="sd">        :type seller_referral: str</span>
+<span class="sd">        :param expiry: Unix timestamp for the instruction expiry.</span>
+<span class="sd">        :type expiry: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/sell_cancel&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;tokenAccount&quot;</span><span class="p">:</span> <span class="n">token_account</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;sellerReferral&quot;</span><span class="p">:</span> <span class="n">seller_referral</span><span class="p">,</span>
+            <span class="s2">&quot;expiry&quot;</span><span class="p">:</span> <span class="n">expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.sell_change_price"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.sell_change_price">[docs]</a>    <span class="k">def</span> <span class="nf">sell_change_price</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seller</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">token_mint</span><span class="p">,</span> <span class="n">token_account</span><span class="p">,</span> <span class="n">price</span><span class="p">,</span> <span class="n">new_price</span><span class="p">,</span> <span class="n">seller_referral</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">expiry</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a sell change price instruction request to the API.</span>
+
+<span class="sd">        :param seller: Address of the seller.</span>
+<span class="sd">        :type seller: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param token_mint: Address of the token mint.</span>
+<span class="sd">        :type token_mint: str</span>
+<span class="sd">        :param token_account: Address of the token account.</span>
+<span class="sd">        :type token_account: str</span>
+<span class="sd">        :param price: Original price of the token.</span>
+<span class="sd">        :type price: str</span>
+<span class="sd">        :param new_price: New price of the token.</span>
+<span class="sd">        :type new_price: str</span>
+<span class="sd">        :param seller_referral: Address of the seller&#39;s referral.</span>
+<span class="sd">        :type seller_referral: str</span>
+<span class="sd">        :param expiry: Unix timestamp for the instruction expiry.</span>
+<span class="sd">        :type expiry: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/sell_change_price&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;seller&quot;</span><span class="p">:</span> <span class="n">seller</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;tokenMint&quot;</span><span class="p">:</span> <span class="n">token_mint</span><span class="p">,</span>
+            <span class="s2">&quot;tokenAccount&quot;</span><span class="p">:</span> <span class="n">token_account</span><span class="p">,</span>
+            <span class="s2">&quot;price&quot;</span><span class="p">:</span> <span class="n">price</span><span class="p">,</span>
+            <span class="s2">&quot;newPrice&quot;</span><span class="p">:</span> <span class="n">new_price</span><span class="p">,</span>
+            <span class="s2">&quot;sellerReferral&quot;</span><span class="p">:</span> <span class="n">seller_referral</span><span class="p">,</span>
+            <span class="s2">&quot;expiry&quot;</span><span class="p">:</span> <span class="n">expiry</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.deposit"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.deposit">[docs]</a>    <span class="k">def</span> <span class="nf">deposit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a deposit instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param amount: Amount to deposit.</span>
+<span class="sd">        :type amount: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/deposit&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">amount</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Instructions.withdraw"><a class="viewcode-back" href="../../magiceden_solana.html#magiceden_solana.instructions.Instructions.withdraw">[docs]</a>    <span class="k">def</span> <span class="nf">withdraw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">buyer</span><span class="p">,</span> <span class="n">auction_house_address</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Make a withdraw instruction request to the API.</span>
+
+<span class="sd">        :param buyer: Address of the buyer.</span>
+<span class="sd">        :type buyer: str</span>
+<span class="sd">        :param auction_house_address: Address of the auction house.</span>
+<span class="sd">        :type auction_house_address: str</span>
+<span class="sd">        :param amount: Amount to withdraw.</span>
+<span class="sd">        :type amount: int</span>
+<span class="sd">        :return: API response containing the result of the instruction.</span>
+<span class="sd">        :rtype: dict</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">base_url</span><span class="si">}</span><span class="s2">/instructions/withdraw&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;buyer&quot;</span><span class="p">:</span> <span class="n">buyer</span><span class="p">,</span>
+            <span class="s2">&quot;auctionHouseAddress&quot;</span><span class="p">:</span> <span class="n">auction_house_address</span><span class="p">,</span>
+            <span class="s2">&quot;amount&quot;</span><span class="p">:</span> <span class="n">amount</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">_make_request</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div></div>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, vmpyre.sol#0001 (Discord).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

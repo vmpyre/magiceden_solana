@@ -1,0 +1,1 @@
+MAINNET_BASE_URL = 'https://api-mainnet.magiceden.dev/v2'

@@ -24,7 +24,7 @@ First, import the SDK's classes:
 from magiceden_solana import Tokens, Wallets, Collections, Launchpad, Instructions
 ```
 
-Then, create instances of the classes to interact with the corresponding API endpoints:
+Then, create instances of the classes to interact with the corresponding API endpoints (in this case the Tokens class):
 ```python
 tokens_api = Tokens()
 ```
@@ -33,8 +33,46 @@ For example, you can use the get_token_metadata() method of the Tokens class to 
 ```python
 tokens_api.get_token_metadata("127icS59959eL776pCWKTUAoWqk8voexAzAs9wiAHfEx")
 ```
-The SDK also provides additional functionality for interacting with the Wallets, Collections and Launchpad endpoints of the Magiceden API.
-You can find more details in the documentation.
+The SDK also provides additional functionality for interacting with the Wallets, Collections, Launchpad and Instructions endpoints of the Magiceden API.
+You can find details about the class methods below
+
+## Class Methods
+See the Official Magiceden documentation for function arguments here: https://api.magiceden.dev/
+
+### Tokens
+- get_token_metadata()
+- get_token_listings()
+- get_received_offers()
+- get_token_activities()
+
+### Wallets
+- get_tokens_owned_by_wallet()
+- get_wallet_activities()
+- get_offers_made_by_wallet()
+- get_offers_received_by_wallet()
+- get_escrow_balance_for_wallet()
+- get_wallet_by_address()
+
+### Collections
+- get_collections()
+- get_collection_listings()
+- get_collection_activities()
+- get_collection_stats()
+
+### Launchpad
+- get_launchpad_collections()
+
+### Instructions
+- buy()
+- buy_now()
+- buy_cancel()
+- buy_change_price()
+- sell()
+- sell_now()
+- sell_cancel()
+- sell_change_price()
+- deposit()
+- withdraw()
 
 ## Contribution
 Feel free to open issues, pull requests and submit feedback. We appreciate your help!

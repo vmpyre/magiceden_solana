@@ -1,4 +1,4 @@
-# magiceden_sdk
+# magiceden_solana
 
 Python SDK for interacting with the [Magiceden Official APIs - https://api.magiceden.dev/](https://api.magiceden.dev/).
 

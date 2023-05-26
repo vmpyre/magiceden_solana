@@ -31,7 +31,7 @@ tokens_api = Tokens()
 
 For example, you can use the get_token_metadata() method of the Tokens class to retrieve metadata of a token by its mint address:
 ```python
-tokens_api.get_token_metadata("127icS59959eL776pCWKTUAoWqk8voexAzAs9wiAHfEx")
+tokens_api.get_token_metadata("TOKEN ADDRESS HERE")
 ```
 The SDK also provides additional functionality for interacting with the Wallets, Collections, Launchpad and Instructions endpoints of the Magiceden API.
 You can find details about the class methods below

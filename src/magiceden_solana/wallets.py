@@ -4,7 +4,7 @@ from config.endpoints import MAINNET_BASE_URL
 class Wallets:
     def __init__(self):
         self.base_url = MAINNET_BASE_URL
-
+    # apis
     def get_tokens_owned_by_wallet(self, wallet_address, offset=0, limit=100,listStatus='both'):
         """
         Retrieves tokens owned by a wallet by wallet address.

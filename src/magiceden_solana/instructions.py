@@ -83,6 +83,41 @@ class Instructions:
         }
         return _make_request(url, self.headers, params)
 
+    def buy_now_transfer_nft(self, 
+        buyer, 
+        seller, 
+        auction_house_address, 
+        token_mint, 
+        token_ata, 
+        price, 
+        destination_ata, 
+        destination_owner, 
+        create_ata,
+        buyer_referral=None, 
+        seller_referral=None, 
+        buyer_expiry=0, 
+        seller_expiry=-1, 
+        buyer_creator_royalty_percent=100):
+
+        url = f"{self.base_url}/instructions/buy_now"
+        params = {
+            "buyer": buyer,
+            "seller": seller,
+            "auctionHouseAddress": auction_house_address,
+            "tokenMint": token_mint,
+            "tokenATA": token_ata,
+            "price": price,
+            "destinationATA": destination_ata,
+            "destinationOwner": destination_owner,
+            "createATA": create_ata,
+            "buyerReferral": buyer_referral,
+            "sellerReferral": seller_referral,
+            "buyerExpiry": buyer_expiry,
+            "sellerExpiry": seller_expiry,
+            "buyerCreatorRoyaltyPercent": buyer_creator_royalty_percent
+        }
+        return _make_request(url, self.headers, params)
+
     def buy_cancel(self, buyer, auction_house_address, token_mint, price, buyer_referral=None, expiry=None):
         """
         Make a buy cancel instruction request to the API.

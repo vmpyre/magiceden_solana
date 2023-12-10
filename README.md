@@ -58,9 +58,13 @@ See the Official Magiceden documentation for function arguments here: https://ap
 - get_collection_listings()
 - get_collection_activities()
 - get_collection_stats()
+- get_collection_holder_stats()
 
 ### Launchpad
 - get_launchpad_collections()
+
+### Marketplace
+- get_top_50_collections()
 
 ### Instructions
 - buy()

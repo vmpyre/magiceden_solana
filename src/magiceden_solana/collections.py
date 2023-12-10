@@ -70,3 +70,17 @@ class Collections:
         """
         url = f'{self.base_url}/collections/{symbol}/stats'
         return _make_request(url)
+
+    def get_collection_holder_stats(self, symbol):
+        """
+        Retrieves stats of a collection by symbol.
+
+        :param symbol: The symbol of the collection to retrieve stats for.
+        :type symbol: str
+        :return: A dictionary containing the stats of the collection.
+        :rtype: dict
+        :raises ValueError: If the request is not successful, it raises an error with the status code.
+
+        """
+        url = f'{self.base_url}/collections/{symbol}/holder_stats'
+        return _make_request(url)

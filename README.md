@@ -88,5 +88,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Thanks to the Magiceden team for providing the API Key.
 
 ## Disclaimer
-This SDK is not affiliated with, endorsed, or sponsored by magiceden. It was created by [vmpyre.sol#0001](https://discordapp.com/users/473884990837489675) (Discord) for personal use and is now being made open-source for others to use and contribute to. The developer of this SDK is not responsible for any errors or issues that may occur when using this SDK. Use at your own risk.
+This SDK is not affiliated with, endorsed, or sponsored by magiceden. It was created by [vmpyre.xyz](https://discordapp.com/users/473884990837489675) (Discord) for personal use and is now being made open-source for others to use and contribute to. The developer of this SDK is not responsible for any errors or issues that may occur when using this SDK. Use at your own risk.
 
